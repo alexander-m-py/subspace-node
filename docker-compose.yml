@@ -27,7 +27,7 @@ services:
       "--unsafe-ws-external",
       "--validator",
       # Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
-      "--name", "birds.arent.real"
+      "--name", "birds_arent_real"
     ]
     healthcheck:
       timeout: 5s
