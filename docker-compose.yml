@@ -1,8 +1,8 @@
-version: "3.7"
+version: "2.1"
 services:
   node:
     # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
-    image: ghcr.io/subspace/node:runtime-snapshot-2022-apr-26
+    image: ghcr.io/subspace/node:snapshot-2022-may-03
     volumes:
     # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
     # alternatively specify path to the directory where files will be stored, just make
@@ -27,7 +27,7 @@ services:
       "--unsafe-ws-external",
       "--validator",
       # Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
-      "--name", "nfts.are.jpgs"
+      "--name", "birds.arent.real"
     ]
     healthcheck:
       timeout: 5s
@@ -37,10 +37,10 @@ services:
 
   farmer:
     depends_on:
-      node:
+      "node":
         condition: service_healthy
     # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
-    image: ghcr.io/subspace/farmer:runtime-snapshot-2022-apr-26
+    image: ghcr.io/subspace/farmer:snapshot-2022-may-03
     # Un-comment following 2 lines to unlock farmer's RPC
     ports:
       - "127.0.0.1:9955:9955"
@@ -57,7 +57,7 @@ services:
       "--node-rpc-url", "ws://node:9944",
       "--ws-server-listen-addr", "0.0.0.0:9955",
       # Replace `WALLET_ADDRESS` with your Polkadot.js wallet address
-      "--reward-address", "5H8thNhZwBHAZjvYWYMUKFtANpchNMp7pKDjBk5aHr6cREqW",
+      "--reward-address", "5EUEwYEEoMKhcZQY7kcyxvdWZTpJFGREna2jtaJ9YYceyBcY",
       # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T
       # (but leave at least 10G of disk space for node)
       "--plot-size", "20G"
