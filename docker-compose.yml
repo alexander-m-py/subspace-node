@@ -34,6 +34,9 @@ services:
       # If node setup takes longer then expected, you want to increase `interval` and `retries` number.
       interval: 30s
       retries: 5
+    logging:
+      options:
+        max-size: 50m
 
   farmer:
     depends_on:
@@ -62,6 +65,9 @@ services:
       # (but leave at least 10G of disk space for node)
       "--plot-size", "20G"
     ]
+    logging:
+      options:
+        max-size: 50m
 volumes:
   node-data:
   farmer-data:
