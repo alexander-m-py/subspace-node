@@ -60,7 +60,7 @@ services:
       "--node-rpc-url", "ws://node:9944",
       "--ws-server-listen-addr", "0.0.0.0:9955",
       # Replace `WALLET_ADDRESS` with your Polkadot.js wallet address
-      "--reward-address", "5EUEwYEEoMKhcZQY7kcyxvdWZTpJFGREna2jtaJ9YYceyBcY",
+      "--reward-address", "st8fj22whW1mvNBP7yvGUB77aJ5CmBxuVoqWUB8GSLTwkogh9",
       # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T
       # (but leave at least 10G of disk space for node)
       "--plot-size", "20G"
