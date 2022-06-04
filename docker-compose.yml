@@ -2,7 +2,7 @@ version: "2.1"
 services:
   node:
     # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
-    image: ghcr.io/subspace/node:gemini-1b-2022-june-02
+    image: ghcr.io/subspace/node:gemini-1b-2022-june-03
     volumes:
     # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
     # alternatively specify path to the directory where files will be stored, just make
@@ -19,8 +19,9 @@ services:
       "--base-path", "/var/subspace",
       "--execution", "wasm",
 #      "--unsafe-pruning",
-      "--pruning", "1024",
-      "--keep-blocks", "1024",
+#      "--pruning", "1024",  # uncomment to use regular node instead of the archive node
+#      "--keep-blocks", "1024",   # uncomment to use regular node instead of the archive node
+      "--pruning", "archive",  # comment out to use regular node  instead of the archive node 
       "--port", "30333",
       "--rpc-cors", "all",
       "--rpc-methods", "safe",
@@ -43,7 +44,7 @@ services:
       "node":
         condition: service_healthy
     # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
-    image: ghcr.io/subspace/farmer:gemini-1b-2022-june-02
+    image: ghcr.io/subspace/farmer:gemini-1b-2022-june-03
     # Un-comment following 2 lines to unlock farmer's RPC
     ports:
       - "127.0.0.1:9955:9955"
@@ -63,7 +64,7 @@ services:
       "--reward-address", "st8fj22whW1mvNBP7yvGUB77aJ5CmBxuVoqWUB8GSLTwkogh9",
       # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T
       # (but leave at least 10G of disk space for node)
-      "--plot-size", "20G"
+      "--plot-size", "110G"
     ]
     logging:
       options:
