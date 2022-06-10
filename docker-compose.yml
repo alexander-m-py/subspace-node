@@ -64,7 +64,7 @@ services:
       "--reward-address", "st8fj22whW1mvNBP7yvGUB77aJ5CmBxuVoqWUB8GSLTwkogh9",
       # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T
       # (but leave at least 10G of disk space for node)
-      "--plot-size", "110G"
+      "--plot-size", "7T"
     ]
     logging:
       options:
