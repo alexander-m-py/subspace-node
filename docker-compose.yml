@@ -19,9 +19,9 @@ services:
       "--base-path", "/var/subspace",
       "--execution", "wasm",
 #      "--unsafe-pruning",
-#      "--pruning", "1024",  # uncomment to use regular node instead of the archive node
-#      "--keep-blocks", "1024",   # uncomment to use regular node instead of the archive node
-      "--pruning", "archive",  # comment out to use regular node  instead of the archive node 
+      "--pruning", "1024",  # uncomment to use regular node instead of the archive node
+      "--keep-blocks", "1024",   # uncomment to use regular node instead of the archive node
+#      "--pruning", "archive",  # comment out to use regular node  instead of the archive node
       "--port", "30333",
       "--rpc-cors", "all",
       "--rpc-methods", "safe",
