@@ -2,7 +2,7 @@ version: "2.1"
 services:
   node:
     # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
-    image: ghcr.io/subspace/node:gemini-1b-2022-jun-10
+    image: ghcr.io/subspace/node:gemini-1b-2022-june-05
     volumes:
     # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
     # alternatively specify path to the directory where files will be stored, just make
@@ -44,7 +44,7 @@ services:
       "node":
         condition: service_healthy
     # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
-    image: ghcr.io/subspace/farmer:gemini-1b-2022-jun-10
+    image: ghcr.io/subspace/farmer:gemini-1b-2022-june-05
     # Un-comment following 2 lines to unlock farmer's RPC
     ports:
       - "127.0.0.1:9955:9955"
